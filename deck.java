@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.Random;
 
 public class deck {
     private LinkedList<card>cards;
@@ -34,9 +35,23 @@ public class deck {
             System.out.println(cards.get(i));
         }
     }
+    public void shuffle(){
+        Random ran = new Random();
+        LinkedList<card> temp= new LinkedList<card>();
+        while(cards.isEmpty()==false){
+            int cardPos= ran.nextInt(cards.size());
+            card cCard= cards.get(cardPos);
+            temp.add(cCard);
+            cards.remove(cardPos);
+        }
+        cards=temp;
+    }
     public static void main(String[] args){
         deck deck1= new deck();
         deck1.makeDeck();
+        deck1.printDeck();
+        System.out.println("==================================================");
+        deck1.shuffle();
         deck1.printDeck();
     }
 }
