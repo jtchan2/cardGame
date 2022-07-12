@@ -8,24 +8,30 @@ public class deck {
     }
     public void makeDeck(){
         String [] suiteTypes= {"Diamond", "Club", "Heart", "Spade"};
+        int point=0;
         for(int i=0; i<4; i++){
             for(int j=0; j<14; j++){
                 String face="";
+                point=j;
                 if(j==0){
                     face="Ace";
+                    point=11;
                 }else if(j<11){
                     face= Integer.toString(j);
                 }
                 if(j==11){
                     face="Jack";
+                    point=10;
                 }
                 if(j==12){
                     face="Queen";
+                    point=10;
                 }
                 if(j==13){
                     face="King";
+                    point=10;
                 }
-                card newCard= new card(suiteTypes[i], face);
+                card newCard= new card(suiteTypes[i], face,point);
                 cards.add(newCard);
             }
         }
@@ -45,6 +51,10 @@ public class deck {
             cards.remove(cardPos);
         }
         cards=temp;
+    }
+    public void addDeck(){}
+    public card giveCard(){
+        return cards.pop();
     }
     public static void main(String[] args){
         deck deck1= new deck();
