@@ -8,9 +8,10 @@ public class card {
         this.suite="";
         this.points=0;
     }
-    public card(String cFace, String cSuite){
+    public card(String cFace, String cSuite, int point){
         this.face=cFace;
         this.suite=cSuite;
+        this.points=point;
     }
     public void setFace(String face){
         this.face=face;
@@ -26,6 +27,9 @@ public class card {
     }
     public String getSuite(){
         return this.suite;
+    }
+    public int getPoint(){
+        return this.points;
     }
     public String toString(){
         String statement="";
