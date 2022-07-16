@@ -53,6 +53,9 @@ public class deck {
         cards=temp;
     }
     public void addDeck(){}
+    public void putCardBack(card Card){
+        cards.add(Card);
+    }
     public card giveCard(){
         return cards.pop();
     }
